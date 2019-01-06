@@ -1,5 +1,5 @@
     <div class="home">
-		<div class="background_image" style="background-image:url(/../../../assets/images/services.jpg)"></div>
+		<div class="background_image" style="background-image:url(<%= asset_path 'services.jpg'%>)"></div>
 		<div class="overlay"></div>
 		<div class="home_container">
 			<div class="container">
@@ -114,7 +114,7 @@
 	<!-- Timetable -->
 
 	<div class="timetable">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="./../../assets/images/timetable.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'timetable.jpg'%>" data-speed="0.8"></div>
 		<div class="tt_overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -385,7 +385,7 @@
 	<!-- Extra -->
 
 	<div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-		<div class="background_image" style="background-image:url(/../../../assets/images/extra_wide.jpg)"></div>
+		<div class="background_image" style="background-image:url(<%= asset_path 'extra_wide.jpg' %>)"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 offset-md-3">

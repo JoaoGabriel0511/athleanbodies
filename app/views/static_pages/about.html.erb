@@ -1,5 +1,5 @@
 <div class="home">
-		<div class="background_image" style="background-image:url(/../../../assets/images/about_page.jpg)"></div>
+		<div class="background_image" style="background-image:url(<%= asset_path 'about_page.jpg')"></div>
 		<div class="overlay"></div>
 		<div class="home_container">
 			<div class="container">
@@ -43,7 +43,7 @@
 	<!-- Team -->
 
 	<div class="team">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="./../../assets/images/blog.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'blog.jpg'%>" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -101,7 +101,7 @@
 				<!-- Extra -->
 				<div class="col-lg-6">
 					<div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-						<div class="background_image" style="background-image:url(/../../../assets/images/extra.jpg)"></div>
+						<div class="background_image" style="background-image:url(<%= asset_path 'extra.jpg'%>)"></div>
 						<div class="extra_title">15% Discount</div>
 						<div class="extra_text">
 							<p>Morbi sed varius risus, vitae molestie lectus. Donec id hendrerit velit, eu fringilla neque. Etiam id finibus sapien. Donec sollicitudin luctus ex non pharetra.llus.</p>
