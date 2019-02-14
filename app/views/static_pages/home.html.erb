@@ -18,8 +18,8 @@
 									</div>
 								</a>
 							</div>
-							<div class="home_title">Get fit with us</div>
-							<div class="home_subtitle">Pilates, Yoga, Fitness, Spinning & many more</div>
+							<div class="home_title"><%= @title.content %></div>
+							<div class="home_subtitle"><%= @subtitle.content %></div>
 							<div class="button home_button ml-auto mr-auto"><a href="#">Join Now</a></div>
 						</div>
 					</div>
@@ -86,11 +86,11 @@
 					<div class="about_content">
 						<div class="section_title_container">
 							<div class="section_subtitle">welcome to sportfit</div>
-							<div class="section_title">About <span>Sportfit</span></div>
+							<div class="section_title"><%= @about_main_text_title.content %></div>
 						</div>
 						<div class="text_highlight">Etiam commodo justo nec aliquam feugiat. Donec a leo eget eget augue porttitor sollicitudin augue porttitor sollicitudin.</div>
 						<div class="about_text">
-							<p>Morbi sed varius risus, vitae molestie lectus. Donec id hendrerit velit, eu fringilla neque. Etiam id finibus sapien. Donec sollicitudin luctus ex non pharetra. Aenean lobortis ut leo vel porta. Maecenas ac vestibulum lectus. Cras nulla urna, lacinia ut tempor facilisis, congue dignissim tellus. Maecenas ac vestibulum lectus. Cras nulla urna, lacinia ut tempor facilisis, congue dignissim tellus. Phasellus sit amet justo ullamcorper, elementum ipsum nec.</p>
+							<p><%= @about_main_text.content %></p>
 						</div>
 						<div class="button about_button"><a href="#">Join Now</a></div>
 					</div>
@@ -124,10 +124,10 @@
 					<div class="test test_1 d-flex flex-row align-items-start justify-content-start">
 						<div><div class="test_image"><%= image_tag "images/test_1.jpg" %></div></div>
 						<div class="test_content">
-							<div class="test_name"><a href="#">Diane Smith</a></div>
+							<div class="test_name"><a href="#"><%= @testimonial_client_2.content %></a></div>
 							<div class="test_title">client</div>
 							<div class="test_text">
-								<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
+								<p><%= @testimonial_content_2.content %></p>
 							</div>
 							<div class="rating rating_4 test_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
@@ -139,10 +139,10 @@
 					<div class="test d-flex flex-row align-items-start justify-content-start">
 						<div><div class="test_image"><%= image_tag "images/test_2.jpg" %></div></div>
 						<div class="test_content">
-							<div class="test_name"><a href="#">Diane Smith</a></div>
+							<div class="test_name"><a href="#"><%= @testimonial_client_1.content %></a></div>
 							<div class="test_title">client</div>
 							<div class="test_text">
-								<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
+								<p><%= @testimonial_content_1.content %></p>
 							</div>
 							<div class="rating rating_4 test_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
@@ -152,10 +152,10 @@
 					<div class="test d-flex flex-row align-items-start justify-content-start">
 						<div><div class="test_image"><%= image_tag "images/test_3.jpg" %></div></div>
 						<div class="test_content">
-							<div class="test_name"><a href="#">Diane Smith</a></div>
+							<div class="test_name"><a href="#"><%= @testimonial_client_3.content %></a></div>
 							<div class="test_title">client</div>
 							<div class="test_text">
-								<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
+								<p><%= @testimonial_content_3.content %></p>
 							</div>
 							<div class="rating rating_4 test_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
@@ -198,163 +198,8 @@
 		</div>
 	</div>
 
-	<!-- Services -->
 
-	<div class="services">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title_container">
-						<div class="section_subtitle">welcome to sportfit</div>
-						<div class="section_title">Our Courses</div>
-					</div>
-				</div>
-			</div>
-			<div class="row services_row">
-				
-				<!-- Service -->
-				<div class="col-xl-4 col-md-6 service_col">
-					<div class="service">
-						<div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-							<div><div class="service_icon"><%= image_tag "images/icon_4.png" %></div></div>
-							<div class="service_title">Weight Loss Class</div>
-						</div>
-						<div class="service_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum.</p>
-						</div>
-					</div>
-				</div>
 
-				<!-- Service -->
-				<div class="col-xl-4 col-md-6 service_col">
-					<div class="service">
-						<div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-							<div><div class="service_icon"><%= image_tag "images/icon_5.png" %></div></div>
-							<div class="service_title">Yoga Classes</div>
-						</div>
-						<div class="service_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Service -->
-				<div class="col-xl-4 col-md-6 service_col">
-					<div class="service">
-						<div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-							<div><div class="service_icon"><%= image_tag "images/icon_6.png" %></div></div>
-							<div class="service_title">Spinning Class</div>
-						</div>
-						<div class="service_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Service -->
-				<div class="col-xl-4 col-md-6 service_col">
-					<div class="service">
-						<div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-							<div><div class="service_icon"><%= image_tag "images/icon_7.png" %></div></div>
-							<div class="service_title">Private Fit Class</div>
-						</div>
-						<div class="service_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Service -->
-				<div class="col-xl-4 col-md-6 service_col">
-					<div class="service">
-						<div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-							<div><div class="service_icon"><%= image_tag "images/icon_8.png" %></div></div>
-							<div class="service_title">Nutrition Classes</div>
-						</div>
-						<div class="service_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Service -->
-				<div class="col-xl-4 col-md-6 service_col">
-					<div class="service">
-						<div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-							<div><div class="service_icon"><%= image_tag "images/icon_9.png" %></div></div>
-							<div class="service_title">Pillates Class</div>
-						</div>
-						<div class="service_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum.</p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- Blog -->
-
-	<div class="blog">
-		<div class="blog_overlay"></div>
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'blog.jpg'%>" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class=" d-flex flex-row align-items-start justify-content-start">
-						<div class="section_title_container">
-							<div class="section_subtitle">welcome to sportfit</div>
-							<div class="section_title">The Blog</div>
-						</div>
-						<div class="all_posts_link ml-auto"><a href="#">View all blog posts</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="row blog_row">
-				
-				<!-- Blog Post -->
-				<div class="col-lg-4 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image"><%= image_tag "images/blog_1.jpg" %></div>
-						<div class="blog_post_title"><a href="#">Tips for the perfect body</a></div>
-						<div class="blog_post_date"><a href="#">june 29, 2018</a></div>
-						<div class="blog_post_text">
-							<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Odio vestibulum est mattis effic iturut.</p>
-						</div>
-						<div class="blog_post_link"><a href="#">Read More</a></div>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="col-lg-4 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image"><%= image_tag "images/blog_2.jpg" %></div>
-						<div class="blog_post_title"><a href="#">Tips for the perfect body</a></div>
-						<div class="blog_post_date"><a href="#">june 29, 2018</a></div>
-						<div class="blog_post_text">
-							<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Odio vestibulum est mattis effic iturut.</p>
-						</div>
-						<div class="blog_post_link"><a href="#">Read More</a></div>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="col-lg-4 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image"><%= image_tag "images/blog_3.jpg" %></div>
-						<div class="blog_post_title"><a href="#">Video: Pilates 4 Begginers</a></div>
-						<div class="blog_post_date"><a href="#">june 29, 2018</a></div>
-						<div class="blog_post_text">
-							<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Odio vestibulum est mattis effic iturut.</p>
-						</div>
-						<div class="blog_post_link"><a href="#">Read More</a></div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
 
 	<%= javascript_include_tag "js/jquery-3.2.1.min.js"%>
 	<%= javascript_include_tag "styles/bootstrap-4.1.2/popper.js"%>

@@ -1,0 +1,38 @@
+<div class="container edit-text-form-container">
+    <div class="row">
+        <!-- ============================================================== -->
+        <!-- validation form -->
+        <!-- ============================================================== -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">Edit texts forms</h5>
+                <div class="card-body">
+                    <%= form_for( @text, url: update_text_path, method: "put", class: "needs-validation", remote: true, :html => {:novalidate => 'novalidate'}) do |f| %>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                <label for="validationCustom01">Text content</label>
+                                <%= f.text_area :content, size: "60x12", id: "validationCustom01", class: "form-control", placeholder: "Content", required: true %>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                <label for="validationCustom01">Text section</label>
+                                <%= select_tag(:section, options_for_select([['About main text', 0], ['About main text title', 1], ['home title', 2], ['home subtitle', 3], ['testimonial client 1', 4], ['testimonial client 2', 5], ['testimonial client 3', 6], ['testimonial content 1', 7], ['testimonial content 2', 8], ['testimonial content 3', 9]])) %>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 button-space">
+                                <%= f.submit 'Change text', class: "btn btn-primary" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end validation form -->
+        <!-- ============================================================== -->
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<h2 class="text-xs-center admin-videos-index-name">Blog videos</h2>
+<div class="container search-form">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <div class="search-form">
+                <%= form_tag(videos_path, :method => :get) do %>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <%= text_field_tag :name, "", class: 'form-control' %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= submit_tag 'Search', class: "btn btn-info" %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container pb-video-container">
+    <% if @videos.length.to_i > 0 %>
+        <div class="col-md-10 offset-md-1">
+            <div class="row pb-row">
+                <% @videos.each do |video| %>
+                    <div class="col-md-3 pb-video" style='background-color: #428bca;'>
+                        <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/<%= video.url.match(/https\:\/\/www\.youtube\.com\/watch\?v=([\w-]{1,})/)[1] %>" frameborder="0" allowfullscreen></iframe>
+                        <label class="form-control label-warning text-xs-center video-title"><%= video.name %></label>
+                        <label class="d-flex justify-content-around form-control label-warning text-xs-center"><%= link_to "Edit", edit_video_path(id: video.id, page: @page), class: "btn btn-sm btn-outline-warning" %><%= link_to "Remove", video_path(id: video.id, page: @page), class: "btn btn-sm btn-outline-danger", method: :delete %></label>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <br>
+        <% if @last_page.to_i != 1 %>
+            <ul class="pagination justify-content-center", style="margin-top: 2%;">
+                <%if @page.to_i != 1 %>
+                    <li class="page-item">
+                    <%= link_to videos_path(page: @page.to_i-1, name: @name), class: "page-link" do %>
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    <% end %>
+                    </li>
+                <% end %>
+                <li class="page-item">
+                    <%= link_to @page, videos_path(page: @page, name: @name), class: "page-link btn btn-primary" %>
+                </li>
+                <% if @page.to_i + 1 <= @last_page.to_i%>
+                    <li class="page-item">
+                    <%= link_to @page.to_i+1, videos_path(page: @page.to_i+1, name: @name), class: "page-link" %>
+                    </li>
+                <% end %>
+                <% if @page.to_i + 2 <= @last_page.to_i%>
+                    <li class="page-item">
+                    <%= link_to @page.to_i+2, videos_path(page: @page.to_i+2, name: @name), class: "page-link" %>
+                    </li>
+                <% end %>
+                <%if @page.to_i != @last_page.to_i %>
+                    <li class="page-item">
+                    <%= link_to videos_path(page: @page.to_i+1, name: @name), class: "page-link", aria_label: "Next" do %>
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    <% end %>
+                    </li>
+                <% end %>
+            </ul>
+        <% end %>
+    <% else %>
+        <h2 class="no-video-text">None video posted yet</h2>
+    <% end %>
+    <%= link_to 'Post a video', new_video_path,class: "btn btn-md btn-success post-video-btn"%>
+</div>
