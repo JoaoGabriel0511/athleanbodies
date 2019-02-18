@@ -1,0 +1,38 @@
+<div class="container edit-text-form-container">
+    <div class="row">
+        <!-- ============================================================== -->
+        <!-- validation form -->
+        <!-- ============================================================== -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">Edit course form</h5>
+                <div class="card-body">
+                    <%= form_for( @course, url: courses_path, method: 'put', class: "needs-validation", remote: true, :html => {:novalidate => 'novalidate'}) do |f| %>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                <label for="validationCustom01">Course name</label>
+                                <%= f.text_field :name, id: "validationCustom01", class: "form-control", placeholder: "Name", required: true %>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                <label for="validationCustom01">Course description</label>
+                                <%= f.text_area :description, size: "60x12", id: "validationCustom01", class: "form-control", placeholder: "Description", required: true %>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 button-space">
+                                <%= f.submit 'Edit course', class: "btn btn-primary" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end validation form -->
+        <!-- ============================================================== -->
+    </div>
+</div>

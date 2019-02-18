@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     get '/edit_texts', to: 'dashboard#edit_texts', as: :edit_text
     put '/edit_texts', to: 'dashboard#update_texts', as: :update_text
     resources :videos, except: [:show]
+    resources :courses, except: [:show]
+    get '/agenda', to: 'when#index'
+    get '/edit_agenda/:id', to:'when#edit', as: :edit_agenda
+    put '/select_course/:id/:course_id', to: 'when#select_course', as: :select_course
   end
   devise_for :admins, skip: [:sessions]
   devise_scope :admin do

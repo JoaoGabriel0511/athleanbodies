@@ -1,0 +1,39 @@
+// Place all the styles related to the when controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.agenda-title {
+    margin-top: 5% !important;
+    text-align: center;
+    font-size: 150% !important;
+}
+
+.day-box:active {
+    background-color: #65645C;
+}
+
+.day-box:hover {
+    background-color: #878078;
+}
+
+.day-box {
+    background-color: #C0B4A8;
+    margin-bottom: 5%;
+}
+
+.class-name {
+    text-align: center !important;
+}
+
+.select-class {
+    text-align: center !important;
+}
+
+.agenda-data-row {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.select-course {
+    margin-top: 5%;
+    margin-bottom: 20%;
+}

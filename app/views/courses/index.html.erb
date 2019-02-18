@@ -1,0 +1,26 @@
+<div class="container courses-container">
+    <h1>Courses</h1>
+    <div class="row">
+        <% if @courses.length > 0 %>
+            <% @courses.each do |course| %>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= course.name %></h5>
+                        <p class="card-text"><%= course.description %></p>
+                        <%= link_to 'Edit', edit_course_path(course), class: "btn btn-warning"%>
+                        <%= link_to 'Delete', course_path(course), class: "btn btn-danger", method: 'delete' %>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            <h2 class="no-courses">No courses found</h2>
+        <% end %>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <%= link_to "New course", new_course_path, class: "btn btn-md btn-success course-btn" %>
+        </div>
+    </div>
+</div>

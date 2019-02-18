@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row agenda-data-row">
+        <div class="col-md-11">
+            <h2>Day of the week: <%= @agenda.week %></h2>
+        </div>
+        <div class="col-md-11">
+            <h2>Time of the day: <%= @agenda.hour %>h</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="select-class">Select a class<h3>
+        </div>
+    </div>
+    <div class="row select-course">
+        <% if @courses.length > 0 %>
+            <% @courses.each do |course| %>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= course.name %></h5>
+                        <p class="card-text"><%= course.description %></p>
+                        <%= link_to 'Select', select_course_path(id: @agenda.id, course_id: course.id), method: 'put', class: "btn btn-primary"%>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            <h2 class="no-courses">No courses found</h2>
+        <% end %>
+    </div>
+</div>

@@ -12,6 +12,12 @@ class StaticPagesController < ApplicationController
     @about_main_text_title = Text.find_by(section: :about_main_text_title)
   end
   def services
+    @courses = Course.all
+    @monday = When.where(week: :monday)
+    @tuesday = When.where(week: :tuesday)
+    @wednesday = When.where(week: :wednesday)
+    @thursday = When.where(week: :thursday)
+    @friday = When.where(week: :friday)
   end
   def blog
     @page = params[:page]

@@ -1,0 +1,120 @@
+<!-- Timetable -->
+<div class="timetable">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'timetable.jpg'%>" data-speed="0.8"></div>
+    <div class="tt_overlay"></div>
+    <div class="container">
+        <%= link_to 'Return', dashboard_path, class: "btn btn-md btn-primary"%>
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container">
+                    <div class="section_subtitle agenda-title">Edit agenda</div>
+                </div>
+                <div class="timetable_container d-flex flex-sm-row flex-column align-items-start justify-content-sm-between justify-content-start">
+
+                    <!-- Monday -->
+                    <div class="tt_day">
+                        <div class="tt_title">monday</div>
+                        <div class="tt_day_content grid">
+                            <% @monday.each do |day| %>
+                                <!-- Class -->
+                                <%= link_to edit_agenda_path(day.id), class: "day-box" do%>    
+                                    <div class="tt_class grid-item weight_loss day-box">
+                                        <% if day.course == nil %>
+                                            <div class="tt_class_title class-name">No class or session assigned</div>
+                                        <% else %>
+                                            <div class="tt_class_title class-name"><%= day.course.name %></div>
+                                        <% end %>
+                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="tt_day">
+                        <div class="tt_title">tuesday</div>
+                        <div class="tt_day_content grid">
+                            <% @tuesday.each do |day| %>
+                                <!-- Class -->
+                                <%= link_to edit_agenda_path(day.id), class: "day-box" do%>    
+                                    <div class="tt_class grid-item weight_loss day-box">
+                                        <% if day.course == nil %>
+                                            <div class="tt_class_title class-name">No class or session assigned</div>
+                                        <% else %>
+                                            <div class="tt_class_title class-name"><%= day.course.name %></div>
+                                        <% end %>
+                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+
+                        </div>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="tt_day">
+                        <div class="tt_title">wednesday</div>
+                        <div class="tt_day_content grid">
+
+                            <% @wednesday.each do |day| %>
+                                <!-- Class -->
+                                <%= link_to edit_agenda_path(day.id), class: "day-box" do%>    
+                                    <div class="tt_class grid-item weight_loss day-box">
+                                        <% if day.course == nil %>
+                                            <div class="tt_class_title class-name">No class or session assigned</div>
+                                        <% else %>
+                                            <div class="tt_class_title class-name"><%= day.course.name %></div>
+                                        <% end %>
+                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+
+                        </div>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="tt_day">
+                        <div class="tt_title">thursday</div>
+                        <div class="tt_day_content grid">
+                            <% @thursday.each do |day| %>
+                                <!-- Class -->
+                                <%= link_to edit_agenda_path(day.id), class: "day-box" do%>    
+                                    <div class="tt_class grid-item weight_loss day-box">
+                                        <% if day.course == nil %>
+                                            <div class="tt_class_title class-name">No class or session assigned</div>
+                                        <% else %>
+                                            <div class="tt_class_title class-name"><%= day.course.name %></div>
+                                        <% end %>
+                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="tt_day">
+                        <div class="tt_title">friday</div>
+                        <div class="tt_day_content grid">
+                            <% @friday.each do |day| %>
+                                <!-- Class -->
+                                <%= link_to edit_agenda_path(day.id), class: "day-box" do%>    
+                                    <div class="tt_class grid-item weight_loss day-box">
+                                        <% if day.course == nil %>
+                                            <div class="tt_class_title class-name">No class or session assigned</div>
+                                        <% else %>
+                                            <div class="tt_class_title class-name"><%= day.course.name %></div>
+                                        <% end %>
+                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
