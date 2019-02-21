@@ -13,11 +13,11 @@ class StaticPagesController < ApplicationController
   end
   def services
     @courses = Course.all
-    @monday = When.where(week: :monday)
-    @tuesday = When.where(week: :tuesday)
-    @wednesday = When.where(week: :wednesday)
-    @thursday = When.where(week: :thursday)
-    @friday = When.where(week: :friday)
+    @monday = When.where(week: :monday).order(:hour)
+    @tuesday = When.where(week: :tuesday).order(:hour)
+    @wednesday = When.where(week: :wednesday).order(:hour)
+    @thursday = When.where(week: :thursday).order(:hour)
+    @friday = When.where(week: :friday).order(:hour)
   end
   def blog
     @page = params[:page]

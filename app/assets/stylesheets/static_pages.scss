@@ -1,4 +1,23 @@
 @import 'contact';
 @import 'blog';
 @import 'services';
-@import 'about'
+@import 'about';
+.main_title {
+    font-size: 300% !important;
+}
+
+.packages {
+    font-size: 200% !important;
+}
+
+.extra_button {
+    margin-top: 0 !important;
+}
+
+.packages-row {
+    margin-bottom: 5%;
+}
+
+.title-row {
+    margin-bottom: 10%;
+}

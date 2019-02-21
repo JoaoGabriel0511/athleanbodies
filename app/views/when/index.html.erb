@@ -24,7 +24,11 @@
                                         <% else %>
                                             <div class="tt_class_title class-name"><%= day.course.name %></div>
                                         <% end %>
-                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                        <% if day.hour > 12%>
+                                            <div class="tt_class_time"><%= day.hour - 12%>-P.M</div>
+                                        <%else%>
+                                            <div class="tt_class_time"><%= day.hour%>-A.M</div>
+                                        <% end %>
                                     </div>
                                 <% end %>
                             <% end %>
@@ -44,7 +48,11 @@
                                         <% else %>
                                             <div class="tt_class_title class-name"><%= day.course.name %></div>
                                         <% end %>
-                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                        <% if day.hour > 12%>
+                                            <div class="tt_class_time"><%= day.hour - 12%>-P.M</div>
+                                        <%else%>
+                                            <div class="tt_class_time"><%= day.hour%>-A.M</div>
+                                        <% end %>
                                     </div>
                                 <% end %>
                             <% end %>
@@ -66,7 +74,11 @@
                                         <% else %>
                                             <div class="tt_class_title class-name"><%= day.course.name %></div>
                                         <% end %>
-                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                        <% if day.hour > 12%>
+                                            <div class="tt_class_time"><%= day.hour - 12%>-P.M</div>
+                                        <%else%>
+                                            <div class="tt_class_time"><%= day.hour%>-A.M</div>
+                                        <% end %>
                                     </div>
                                 <% end %>
                             <% end %>
@@ -87,7 +99,11 @@
                                         <% else %>
                                             <div class="tt_class_title class-name"><%= day.course.name %></div>
                                         <% end %>
-                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                        <% if day.hour > 12%>
+                                            <div class="tt_class_time"><%= day.hour - 12%>-P.M</div>
+                                        <%else%>
+                                            <div class="tt_class_time"><%= day.hour%>-A.M</div>
+                                        <% end %>
                                     </div>
                                 <% end %>
                             <% end %>
@@ -107,7 +123,11 @@
                                         <% else %>
                                             <div class="tt_class_title class-name"><%= day.course.name %></div>
                                         <% end %>
-                                        <div class="tt_class_time"><%= day.hour %>h</div>
+                                        <% if day.hour > 12%>
+                                            <div class="tt_class_time"><%= day.hour - 12%>-P.M</div>
+                                        <%else%>
+                                            <div class="tt_class_time"><%= day.hour%>-A.M</div>
+                                        <% end %>
                                     </div>
                                 <% end %>
                             <% end %>

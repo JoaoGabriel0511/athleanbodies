@@ -2,11 +2,11 @@ class WhenController < ApplicationController
     before_action :authenticate_admin!
     layout 'dashboard', except: [:index]
     def index
-        @monday = When.where(week: :monday)
-        @tuesday = When.where(week: :tuesday)
-        @wednesday = When.where(week: :wednesday)
-        @thursday = When.where(week: :thursday)
-        @friday = When.where(week: :friday)
+        @monday = When.where(week: :monday).order(:hour)
+        @tuesday = When.where(week: :tuesday).order(:hour)
+        @wednesday = When.where(week: :wednesday).order(:hour)
+        @thursday = When.where(week: :thursday).order(:hour)
+        @friday = When.where(week: :friday).order(:hour)
     end
 
     def edit
