@@ -30,6 +30,12 @@ class StaticPagesController < ApplicationController
         @videos = Video.all.order(:created_at).page(@page).per(18)
     end
   end
+
   def contact
+  end
+
+  def send_email
+    UserMailer.with(email: params[:email], name: params[:name], message: params[:message]).contact_mail.deliver_now
+    redirect_to contact_path
   end
 end

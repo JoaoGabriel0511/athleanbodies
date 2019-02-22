@@ -55,18 +55,18 @@
 				<div class="col-lg-8 contact_col">
 					<div class="contact_title">Get in touch</div>
 					<div class="contact_form_container">
-						<form action="#" id="contact_form" class="contact_form">
+						<%= form_with url: send_email_path, id: "contact_form", class: "contact_form" do |form| %>
 							<div class="row">
 								<div class="col-lg-6">
-									<div class="input_item"><input type="text" class="contact_input trans_200" placeholder="Name" required="required"></div>
+									<div class="input_item"><%= form.text_field :name, class: "contact_input trans_200", id: "contact_input trans_200", placeholder: "Name" %></div>
 								</div>
 								<div class="col-lg-6">
-									<div class="input_item"><input type="email" class="contact_input trans_200" placeholder="E-mail" required="required"></div>
+									<div class="input_item"><%= form.text_field :email, class: "contact_input trans_200", id: "contact_input trans_200", placeholder: "E-mail" %></div>
 								</div>
 							</div>
-							<div class="input_item"><textarea class="contact_input contact_textarea trans_200" placeholder="Message" required="required"></textarea></div>
-							<button class="contact_button button">Send<span></span></button>
-						</form>
+							<div class="input_item"><%= form.text_area :message, class: "contact_input contact_textarea trans_200", id: "contact_input trans_200", placeholder: "Message" %></div>
+							<%= form.submit "Send", class: "contact_button button"%>
+						<% end %>
 					</div>
 				</div>
 

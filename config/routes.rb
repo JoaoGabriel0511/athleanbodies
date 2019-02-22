@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   get '/blog', to: 'static_pages#blog'
   get '/contact', to: 'static_pages#contact'
   get '/test', to: 'static_pages#test'
+  post '/send_email', to: 'static_pages#send_email'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
