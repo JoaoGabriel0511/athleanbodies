@@ -10,6 +10,10 @@ class StaticPagesController < ApplicationController
     @testimonial_content_3 = Text.find_by(section: :testimonial_content_3)
     @about_main_text = Text.find_by(section: :about_main_text)
     @about_main_text_title = Text.find_by(section: :about_main_text_title)
+    @courses = Course.limit(3)
+    @course_1 = @courses[0]
+    @course_2 = @courses[1]
+    @course_3 = @courses[2]
   end
   def services
     @courses = Course.all

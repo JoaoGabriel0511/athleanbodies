@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
     @text = Text.find_by(section: params[:section])
     @text.content = text_params[:content]
     @text.save
-    redirect_to about_path
+    redirect_to root_path
   end
   private
     def text_params

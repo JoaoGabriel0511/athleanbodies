@@ -11,16 +11,16 @@
 					<div class="col">
 						<div class="home_content text-center">
 							<div class="video_link">
-								<a class="vimeo video_button d-flex flex-column align-items-center justify-content-center" href="https://player.vimeo.com/video/99340873?autoplay=1&loop=1&title=0&autopause=0">
+								<%= link_to blog_path do%>
 									<div class="video_link_content d-flex flex-row align-items-center justify-content-start">
 										<div class="video_icon d-flex flex-column align-items-center justify-content-center"><i class="fa fa-play" aria-hidden="true"></i></div>
 										<span class="video_text">See Workout Video</span>
 									</div>
-								</a>
+								<% end %>
 							</div>
 							<div class="home_title"><%= @title.content %></div>
 							<div class="home_subtitle"><%= @subtitle.content %></div>
-							<div class="button home_button ml-auto mr-auto"><a href="#">Join Now</a></div>
+							<div class="button home_button ml-auto mr-auto"><%= link_to 'Contact Us', contact_path%></div>
 						</div>
 					</div>
 				</div>
@@ -36,41 +36,43 @@
 				<div class="col">
 					<div class="boxes_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
 						<!-- Box -->
-						<div class="box">
-							<div class="box_icon d-flex flex-column align-items-center justify-content-center"><%= image_tag "images/icon_1.png" %></div>
-							<div class="box_title">Pilates with trainer</div>
-							<div class="box_text">
-								<p>Etiam commodo justo nec aliquam feugiat. Donec a leo eget augue porttitor sollicitudin.</p>
+						<% if @course_1 != nil%>
+							<div class="box">
+								<div class="box_title"><%= @course_1.name %></div>
+								<div class="box_text">
+									<p><%= @course_1.description %></p>
+								</div>
+								<div class="box_link_container">
+									<%= link_to services_path do %><div class="box_link d-flex flex-column align-items-center justify-content-center trans_200"><div>+</div></div><% end %>
+								</div>
 							</div>
-							<div class="box_link_container">
-								<a href="#"><div class="box_link d-flex flex-column align-items-center justify-content-center trans_200"><div>+</div></div></a>
-							</div>
-						</div>
+						<% end %>
 
 						<!-- Box -->
-						<div class="box">
-							<div class="box_icon d-flex flex-column align-items-center justify-content-center"><%= image_tag "images/icon_2.png" %></div>
-							<div class="box_title">Swimming Pool</div>
-							<div class="box_text">
-								<p>Donec a leo eget augue porttitor sollicitudin. Morbi sed varius risus, vitae molestie lectus. Donec id hendrerit.</p>
+						<% if @course_2 != nil%>
+							<div class="box">
+								<div class="box_title"><%=@course_2.name%></div>
+								<div class="box_text">
+									<p><%= @course_2.description %></p>
+								</div>
+								<div class="box_link_container">
+									<%= link_to services_path do %><div class="box_link d-flex flex-column align-items-center justify-content-center trans_200"><div>+</div></div><% end %>
+								</div>
 							</div>
-							<div class="box_link_container">
-								<a href="#"><div class="box_link d-flex flex-column align-items-center justify-content-center trans_200"><div>+</div></div></a>
-							</div>
-						</div>
+						<% end %>
 
 						<!-- Box -->
-						<div class="box">
-							<div class="box_icon d-flex flex-column align-items-center justify-content-center"><%= image_tag "images/icon_3.png" %></div>
-							<div class="box_title">Healthy diet plan</div>
-							<div class="box_text">
-								<p>Morbi sed varius risus, vitae molestie lectus. Donec id hendrerit velit, eu fringilla neque.</p>
+						<% if @course_3 != nil%>
+							<div class="box">
+								<div class="box_title"><%= @course_3.name %></div>
+								<div class="box_text">
+									<p><%= @course_3.description %></p>
+								</div>
+								<div class="box_link_container">
+									<%= link_to services_path do %><div class="box_link d-flex flex-column align-items-center justify-content-center trans_200"><div>+</div></div><% end %>
+								</div>
 							</div>
-							<div class="box_link_container">
-								<a href="#"><div class="box_link d-flex flex-column align-items-center justify-content-center trans_200"><div>+</div></div></a>
-							</div>
-						</div>
-
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -92,16 +94,6 @@
 						<div class="about_text">
 							<p><%= @about_main_text.content %></p>
 						</div>
-						<div class="button about_button"><a href="#">Join Now</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="about_background">
-			<div class="container fill_height">
-				<div class="row fill_height">
-					<div class="col-lg-6 offset-lg-6 fill_height">
-						<div class="about_image"><%= image_tag "images/a1.png" %></div>
 					</div>
 				</div>
 			</div>
@@ -116,20 +108,18 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="section_title_container">
-						<div class="section_subtitle">welcome to sportfit</div>
+						<div class="section_subtitle">welcome to athleanbodies</div>
 						<div class="section_title">Testimonials</div>
 					</div>
 
 					<!-- Testimonial -->
 					<div class="test test_1 d-flex flex-row align-items-start justify-content-start">
-						<div><div class="test_image"><%= image_tag "images/test_1.jpg" %></div></div>
 						<div class="test_content">
-							<div class="test_name"><a href="#"><%= @testimonial_client_2.content %></a></div>
+							<div class="test_name"><a><%= @testimonial_client_2.content %></a></div>
 							<div class="test_title">client</div>
 							<div class="test_text">
 								<p><%= @testimonial_content_2.content %></p>
 							</div>
-							<div class="rating rating_4 test_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
 					</div>
 				</div>
@@ -137,27 +127,23 @@
 					
 					<!-- Testimonial -->
 					<div class="test d-flex flex-row align-items-start justify-content-start">
-						<div><div class="test_image"><%= image_tag "images/test_2.jpg" %></div></div>
 						<div class="test_content">
-							<div class="test_name"><a href="#"><%= @testimonial_client_1.content %></a></div>
+							<div class="test_name"><a><%= @testimonial_client_1.content %></a></div>
 							<div class="test_title">client</div>
 							<div class="test_text">
 								<p><%= @testimonial_content_1.content %></p>
 							</div>
-							<div class="rating rating_4 test_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
 					</div>
 
 					<!-- Testimonial -->
 					<div class="test d-flex flex-row align-items-start justify-content-start">
-						<div><div class="test_image"><%= image_tag "images/test_3.jpg" %></div></div>
 						<div class="test_content">
-							<div class="test_name"><a href="#"><%= @testimonial_client_3.content %></a></div>
+							<div class="test_name"><a><%= @testimonial_client_3.content %></a></div>
 							<div class="test_title">client</div>
 							<div class="test_text">
 								<p><%= @testimonial_content_3.content %></p>
 							</div>
-							<div class="rating rating_4 test_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
 					</div>
 
@@ -165,7 +151,6 @@
 			</div>
 			<div class="row test_button_row">
 				<div class="col text-center">
-					<div class="button test_button"><a href="#">Join Now</a></div>
 				</div>
 			</div>
 		</div>

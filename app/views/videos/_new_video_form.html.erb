@@ -6,6 +6,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <h5 class="card-header">Post video form</h5>
+                <%= render 'error_msg' %>
                 <div class="card-body">
                     <%= form_for( @video, url: videos_path, class: "needs-validation", remote: true, :html => {:novalidate => 'novalidate'}) do |f| %>
                         <div class="row">

@@ -9,7 +9,6 @@
 Admin.delete_all
 Text.delete_all
 When.delete_all
-
 Admin.create(email: "admin@admin.com", password: "admin123", password_confirmation: "admin123")
 Text.create(section: :about_main_text, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra volutpat sapien sed imperdiet. Quisque non bibendum tortor, vel blandit purus. Praesent sit amet porttitor felis, eu tincidunt risus. Nullam aliquam erat a lorem lobortis sodales. Nullam rutrum arcu nisi, accumsan faucibus lectus congue vel. Maecenas blandit quis quam sed elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum ornare neque vel nunc hendrerit, eu molestie ipsum ultrices. Proin blandit magna a scelerisque sodales.")
 Text.create(section: :about_main_text_title, content: "Lorem ipsum")

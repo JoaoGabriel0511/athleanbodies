@@ -1,0 +1,15 @@
+<div class='custom-alert-position'>
+    <% if flash[:notice] %>
+        <div class='alert alert-success fade show' role='alert' data-dismiss='alert'>
+        <%= flash[:notice] %>
+        </div>
+    <% elsif flash[:alert] %>
+        <div class='alert alert-danger fade show' role='alert' data-dismiss='alert'>
+            <ul>
+                <% flash[:alert].each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>

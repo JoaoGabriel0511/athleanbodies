@@ -13,8 +13,10 @@ class CoursesController < ApplicationController
     def create
         @course = Course.new(course_params)
         if @course.save
+            flash[:notice] = 'Course successfully created'
             redirect_to courses_path
         else
+            flash[:alert] = @course.errors.full_messages
             redirect_to new_course_path
         end
     end
@@ -23,11 +25,13 @@ class CoursesController < ApplicationController
         @course = Course.find(params[:id])
     end
 
-    def upgrade
+    def update
         @course = Course.find(params[:id])
-        if @course.upgrade(course_params)
+        if @course.update(course_params)
+            flash[:notice] = 'Course successfully updated'
             redirect_to courses_path
         else
+            flash[:alert] = @course.errors.full_messages
             redirect_to edit_course_path
         end
     end
