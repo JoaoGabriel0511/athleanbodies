@@ -5,11 +5,17 @@
         </div>
     <% elsif flash[:alert] %>
         <div class='alert alert-danger fade show' role='alert' data-dismiss='alert'>
-            <ul>
-                <% flash[:alert].each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
+            <%if flash[:alert].class == Array.class%>
+                <ul>
+                    <% flash[:alert].each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            <% else %>
+                <ul>
+                    <li><%= flash[:alert] %></li>
+                </ul>
+            <%end%>
         </div>
     <% end %>
 </div>
