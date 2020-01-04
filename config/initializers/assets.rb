@@ -35,6 +35,7 @@ Rails.application.config.assets.precompile += %w( plugins/parallax-js-master/par
 Rails.application.config.assets.precompile += %w( plugins/colorbox/jquery.colorbox-min.js )
 Rails.application.config.assets.precompile += %w( js/custom.js )
 Rails.application.config.assets.precompile += %w( *.jpg *.png)
+Rails.application.config.assets.precompile += %w( timetable.jpg)
 Rails.application.config.assets.precompile += %w( js/about.js )
 Rails.application.config.assets.precompile += %w( js/services.js )
 Rails.application.config.assets.precompile += %w( plugins/Isotope/isotope.pkgd.min.js )
