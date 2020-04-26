@@ -5,7 +5,7 @@
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Edit course form</h5>
+                <h5 class="card-header">Edit class form</h5>
                 <%= render 'error_msg' %>
                 <div class="card-body">
                     <%= form_for(@course, url: course_path, method: 'put', class: "needs-validation", remote: true, :html => {:novalidate => 'novalidate'}) do |f| %>
@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 button-space">
-                                <%= f.submit 'Edit course', class: "btn btn-primary" %>
+                                <%= f.submit 'Edit class', class: "btn btn-primary" %>
                             </div>
                         </div>
                     <% end %>

@@ -1,5 +1,5 @@
 <div class="container courses-container">
-    <h1>Courses</h1>
+    <h1>Classes</h1>
     <%= render 'error_msg' %>
     <div class="row">
         <% if @courses.length > 0 %>
@@ -14,14 +14,14 @@
                 </div>
             <% end %>
         <% else %>
-            <h2 class="no-courses">No courses found</h2>
+            <h2 class="no-courses">No classes found</h2>
         <% end %>
     </div>
     <div class="row">
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <%= link_to "New course", new_course_path, class: "btn btn-md btn-success course-btn" %>
+            <%= link_to "New class", new_course_path, class: "btn btn-md btn-success course-btn" %>
         </div>
     </div>
 </div>
